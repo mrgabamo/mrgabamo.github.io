@@ -1,1 +1,1 @@
-# mrgabamo.com
+# mrgabamo.github.io
