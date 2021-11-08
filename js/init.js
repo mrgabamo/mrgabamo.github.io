@@ -125,10 +125,10 @@ var penelope = function() {
 	
 	/*Typed js start*/
 	$("#typed").typed({
-		strings: ["^2100&nbsp;Sou Gabriel.<br/>Product Manager.<br/> no Mercado Bitcoin."],
+		strings: ['Hey! Im Gabriel, <br/>Senior Product Manager <br/> at Mercado Bitcoin.', 'Olá! Sou Gabriel, <br/>Senior Product Manager <br/> no Mercado Bitcoin.', 'Ciao! Sono Gabriel, <br/>Senior Product Manager <br/> presso Mercado Bitcoin.'],
 		typeSpeed: 30,
 		backDelay: 750,
-		loop: false,
+		loop: true,
 		cursorChar: "|",
 		contentType: 'html', // or text
 		// defaults to false for infinite loop
