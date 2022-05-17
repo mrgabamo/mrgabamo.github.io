@@ -110,7 +110,7 @@ h6 {
   letter-spacing: 1.5px;
   font-weight: 500;
   text-transform: uppercase;
-  color: #2d26ff;
+  color: #1993ff;
   margin-bottom: 33px; }
 
 p {
@@ -845,7 +845,7 @@ a.goto-social, a.goto-social:hover {
 .experience-wrap .exp-timeline.timeline-inactive.timeline-active .exp-content-wrap {
   opacity: 1 !important; }
 .experience-wrap .exp-timeline.timeline-active .timeline-st:after {
-  border: 3px solid #2d26ff; }
+  border: 3px solid #1993ff; }
 
 /********Client Sec CSS********/
 .client-wrap .owl-carousel .owl-item img {
@@ -1014,7 +1014,7 @@ footer .available-wrap {
     animation-iteration-count: infinite;
     content: ' '; }
     footer .available-wrap .available-pointer:before {
-      background-color: #2d26ff;
+      background-color: #1993ff;
       content: ' ';
       position: absolute;
       top: -8px;
@@ -1156,9 +1156,9 @@ footer .goto-top {
     -webkit-transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
     transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s; }
   nav.navbar.navbar-default li a:hover span {
-    color: #2d26ff; }
+    color: #1993ff; }
   nav.navbar.navbar-default li.active a span {
-    color: #2d26ff; }
+    color: #1993ff; }
   nav.navbar.navbar-default li:hover, nav.navbar.navbar-default li:active, nav.navbar.navbar-default li:focus {
     background: none; }
 
@@ -1237,7 +1237,7 @@ footer .goto-top {
       color: #fff;
       background: #fff; }
       header .btn .mask {
-        background: #2d26ff; }
+        background: #1993ff; }
       header .btn:hover {
         color: #141414;
         background: #fff; }
