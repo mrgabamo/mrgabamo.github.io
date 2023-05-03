@@ -125,7 +125,7 @@ var penelope = function() {
 	
 	/*Typed js start*/
 	$("#typed").typed({
-		strings: ['Hey! Im Gabriel', 'Olá! Sou Gabriel', 'Ciao! Sono Gabriel'],
+		strings: ['Hey! Im Gabriel Amorim,', 'Olá! Sou Gabriel Amorim,', 'Ciao! Sono Gabriel Amorim,'],
 		typeSpeed: 20,
 		backDelay: 1000,
 		loop: true,
