@@ -125,9 +125,9 @@ var penelope = function() {
 	
 	/*Typed js start*/
 	$("#typed").typed({
-		strings: ['Hey! Im Gabriel, <br/>Senior Product Manager <br/> at Amazon Music.', 'Olá! Sou Gabriel, <br/>Senior Product Manager <br/> na Amazon Music.', 'Ciao! Sono Gabriel, <br/>Senior Product Manager <br/> presso Amazon Music.'],
-		typeSpeed: 30,
-		backDelay: 750,
+		strings: ['Hey! Im Gabriel', 'Olá! Sou Gabriel', 'Ciao! Sono Gabriel'],
+		typeSpeed: 20,
+		backDelay: 1000,
 		loop: true,
 		cursorChar: "|",
 		contentType: 'html', // or text
