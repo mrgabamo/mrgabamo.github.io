@@ -369,10 +369,10 @@ p {
   -webkit-transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
   transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s; }
   .content-block .person-img {
-    height: 150px;
-    width: 150px;
+    height: 300px;
+    width: 300px;
     background: url(../img/candidate.png);
-    border-radius: 50%;
+    border-radius: 30%;
     background-repeat: no-repeat;
     background-size: cover; }
 
