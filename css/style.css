@@ -1238,9 +1238,7 @@ footer .goto-top {
           outline: none !important;
           border: none !important;
           color: #fff !important; }
-        header .header-wrap .btn:hover .pe-7s-download, header .header-wrap .btn:hover .pe-7s-menu {
-          color: #141414 !important; }
-        header .header-wrap .btn:hover .pe-7s-world, header .header-wrap .btn:hover .pe-7s-menu {
+        header .header-wrap .btn:hover .pe-7s-world, header .btn:hover .pe-7s-download, header .header-wrap .btn:hover .pe-7s-menu {
           color: #141414 !important; }
       header .header-wrap b {
         display: none; }
@@ -1288,7 +1286,7 @@ footer .goto-top {
 @media only screen and (max-width: 1024px) {
   header .header-wrap .btn:hover .mask {
     width: 0; }
-  header .header-wrap .btn:hover .pe-7s-download, header .header-wrap .btn:hover .pe-7s-menu {
+  header .header-wrap .btn:hover .pe-7s-world, header .btn:hover .pe-7s-download, header .header-wrap .btn:hover .pe-7s-menu {
     color: #fff !important; }
 
   .contact-wrap .btn {
@@ -1356,10 +1354,6 @@ footer .goto-top {
     padding-top: 17px; }
 
   .float-right.social-download-wrap {
-    padding-top: 10px;
-    margin-right: 20px; }
-
-  .float-right.social-language-wrap {
     padding-top: 10px;
     margin-right: 20px; }
 
