@@ -407,7 +407,7 @@ p {
     z-index: 2;
     display: inline-block; }
   .btn .mask {
-    background: #e91e63;
+    background: #1993ff;
     border-radius: 2px;
     display: block;
     height: 100%;
@@ -448,6 +448,10 @@ header {
       font-size: 25px;
       display: none;
       color: #fff; }
+      header .header-wrap .pe-7s-world {
+      font-size: 25px;
+      display: none;
+      color: #fff; }
     header .header-wrap .pe-7s-menu {
       font-size: 25px;
       color: #fff; }
@@ -470,7 +474,7 @@ header {
       color: #fff;
       background: #141414; }
       header.fixed .btn .mask {
-        background: #e91e63; }
+        background: #1993ff; }
       header.fixed .btn:hover, header.fixed .btn:focus, header.fixed .btn:active {
         background: #141414 !important;
         outline: none !important;
@@ -592,7 +596,7 @@ a.goto-social, a.goto-social:hover {
   border-color: #454648; }
 
 /********Services Sec CSS********/
-.services-icon-wrap span {
+.services--wrap span {
   display: block; }
   .services-icon-wrap span.key-fact {
     font-size: 14px;
@@ -638,7 +642,7 @@ a.goto-social, a.goto-social:hover {
       right: 0px;
       top: -27px; }
   .skills-wrap .progress-bar-graph span {
-    background-color: #e91e63;
+    background-color: #1993ff;
     height: 3px;
     width: 0px;
     display: block;
@@ -646,7 +650,7 @@ a.goto-social, a.goto-social:hover {
     position: relative;
     overflow: visible !important; }
     .skills-wrap .progress-bar-graph span:after {
-      border: 3px solid #e91e63;
+      border: 3px solid #1993ff;
       border-radius: 50%;
       content: "";
       height: 15px;
@@ -937,7 +941,7 @@ a.goto-social, a.goto-social:hover {
     background: #fff !important;
     color: #fff !important; }
   .contact-wrap .btn .mask {
-    background-color: #e91e63; }
+    background-color: #1993ff; }
 .contact-wrap .email-direct {
   font-size: 14px;
   margin-top: 60px; }
@@ -949,7 +953,7 @@ a.goto-social, a.goto-social:hover {
 .contact-wrap .bg-success, .contact-wrap .bg-danger {
   background: none; }
 .contact-wrap .bg-success {
-  color: #e91e63; }
+  color: #1993ff; }
 
 /********Footer Sec CSS********/
 @-webkit-keyframes blinking {
@@ -1172,8 +1176,15 @@ footer .goto-top {
     position: relative;
     z-index: 1; }
 
+  .name, .social-language-wrap {
+    position: relative;
+    z-index: 1; }
+
   .social-download-wrap {
-    margin-right: 70px; }
+    margin-right: 20px; }
+
+  .social-language-wrap {
+    margin-right: 20px;}
 
   .navbar-toggle {
     margin: 0;
@@ -1219,7 +1230,9 @@ footer .goto-top {
         background: #141414 !important; }
         header .header-wrap .btn .btn-label {
           padding-bottom: 0;
-          padding-top: 0; }
+          padding-top: 0;
+          min-width: 30px;
+          min-height: 30pc; }
         header .header-wrap .btn:hover, header .header-wrap .btn:focus, header .header-wrap .btn:active {
           background: #141414 !important;
           outline: none !important;
@@ -1227,9 +1240,13 @@ footer .goto-top {
           color: #fff !important; }
         header .header-wrap .btn:hover .pe-7s-download, header .header-wrap .btn:hover .pe-7s-menu {
           color: #141414 !important; }
+        header .header-wrap .btn:hover .pe-7s-world, header .header-wrap .btn:hover .pe-7s-menu {
+          color: #141414 !important; }
       header .header-wrap b {
         display: none; }
       header .header-wrap .pe-7s-download {
+        display: block; }
+      header .header-wrap .pe-7s-world {
         display: block; }
     header .name {
       padding-left: 15px; }
@@ -1340,7 +1357,11 @@ footer .goto-top {
 
   .float-right.social-download-wrap {
     padding-top: 10px;
-    margin-right: 60px; }
+    margin-right: 20px; }
+
+  .float-right.social-language-wrap {
+    padding-top: 10px;
+    margin-right: 20px; }
 
   .navbar-toggle {
     top: 10px; }

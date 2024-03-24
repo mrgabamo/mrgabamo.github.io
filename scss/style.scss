@@ -1376,7 +1376,14 @@ footer {
 		position:relative;
 		z-index:1;
 	}
+	.name,.social-language-wrap {
+		position:relative;
+		z-index:1;
+	}
 	.social-download-wrap {
+		margin-right: 70px;
+	}
+	.social-language-wrap {
 		margin-right: 70px;
 	}
 	.navbar-toggle {
@@ -1592,6 +1599,10 @@ footer {
 	}
 	
 	.float-right.social-download-wrap {
+		padding-top: 10px;
+		margin-right:60px;
+	}
+	.float-right.social-language-wrap {
 		padding-top: 10px;
 		margin-right:60px;
 	}
