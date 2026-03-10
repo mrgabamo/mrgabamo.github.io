@@ -50,15 +50,32 @@
             overflow: hidden;
             background: var(--neo-darker);
         }
-        .hero-bg-grid {
-            position: absolute; inset: 0;
-            background-image:
-                linear-gradient(rgba(59,175,74,.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59,175,74,.04) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 25s linear infinite;
+        .hero-bg {
+            position: absolute; inset: 0; overflow: hidden; pointer-events: none;
         }
-        @keyframes gridMove { 0%{transform:translate(0,0)}100%{transform:translate(50px,50px)} }
+        /* Real agriculture photo background */
+        .hero-bg-photo {
+            position: absolute; inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80&auto=format');
+            background-size: cover;
+            background-position: center 40%;
+            filter: brightness(.25) saturate(1.2);
+        }
+        /* Green gradient overlay for brand cohesion */
+        .hero-bg-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(10,10,10,.5) 0%,
+                rgba(42,140,56,.15) 40%,
+                rgba(10,10,10,.7) 100%
+            );
+        }
+        /* Subtle vignette */
+        .hero-bg-vignette {
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at center, transparent 40%, rgba(10,10,10,.6) 100%);
+        }
 
         .hero-glow {
             position: absolute; border-radius: 50%; filter: blur(130px); opacity: .12; pointer-events: none;
@@ -232,12 +249,12 @@
 
         /* WhatsApp floating in wireframe */
         .wf-wa {
-            position:absolute;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;
+            position:absolute;bottom:20px;right:20px;width:96px;height:96px;border-radius:50%;
             background:#25d366;display:flex;align-items:center;justify-content:center;z-index:5;
-            box-shadow:0 4px 16px rgba(37,211,102,.4); animation:waPulse 2.5s ease-in-out infinite;
+            box-shadow:0 6px 28px rgba(37,211,102,.5); animation:waPulse 2.5s ease-in-out infinite;
         }
-        @keyframes waPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.06);box-shadow:0 6px 24px rgba(37,211,102,.6)} }
-        .wf-wa svg { fill:white; width:24px; height:24px; }
+        @keyframes waPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08);box-shadow:0 10px 40px rgba(37,211,102,.65)} }
+        .wf-wa svg { fill:white; width:48px; height:48px; }
 
         /* Scanning beam */
         .wf-beam {
@@ -349,7 +366,11 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero">
-        <div class="hero-bg-grid"></div>
+        <div class="hero-bg">
+            <div class="hero-bg-photo"></div>
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-bg-vignette"></div>
+        </div>
         <div class="hero-glow hero-glow-1"></div>
         <div class="hero-glow hero-glow-2"></div>
         <div class="particles" id="particles"></div>
