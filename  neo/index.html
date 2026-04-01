@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Fertilizantes - Adubos Especiais</title>
+    <meta name="description" content="Neo Fertilizantes - Promovendo o crescimento da produtividade com adubos que potencializem a qualidade do solo.">
+
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS v3 Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        'cyan-neo': '#00E8FF',
+                        'dark-neo': '#0a0a0a',
+                        'gray-neo': '#1a1a1a'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'marquee': 'marquee 30s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' }
+                        },
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(0, 232, 255, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(0, 232, 255, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Dark mode default */
+        body {
+            @apply bg-dark-neo text-white transition-colors duration-300;
+        }
+
+        body.light-mode {
+            @apply bg-white text-gray-900;
+        }
+
+        .dark-mode .bg-dark-neo { @apply bg-dark-neo; }
+        .dark-mode .text-white { @apply text-white; }
+        .dark-mode .border-gray-800 { @apply border-gray-800; }
+        .dark-mode .bg-gray-neo { @apply bg-gray-neo; }
+        .dark-mode .hover\:bg-gray-800 { @apply hover:bg-gray-800; }
+
+        .light-mode .bg-dark-neo { @apply bg-white; }
+        .light-mode .text-white { @apply text-gray-900; }
+        .light-mode .border-gray-800 { @apply border-gray-200; }
+        .light-mode .bg-gray-neo { @apply bg-gray-50; }
+        .light-mode .hover\:bg-gray-800 { @apply hover:bg-gray-100; }
+        .light-mode .text-gray-400 { @apply text-gray-600; }
+        .light-mode .text-gray-500 { @apply text-gray-700; }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Theme toggle helper */
+        .light-mode .shadow-lg {
+            @apply shadow-lg;
+        }
+
+        /* Gradient accent */
+        .accent-gradient {
+            background: linear-gradient(135deg, #00E8FF, #00c9d7);
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+        }
+
+        /* Parallax parallelogram shape */
+        .neo-shape {
+            width: 100px;
+            height: 100px;
+            transform: skewX(-20deg);
+            background: linear-gradient(135deg, #00E8FF, rgba(0, 232, 255, 0.3));
+            border-radius: 4px;
+        }
+
+        /* Marquee wrapper */
+        .marquee-wrapper {
+            overflow: hidden;
+            background: linear-gradient(90deg, rgba(0, 232, 255, 0.1), transparent, transparent, rgba(0, 232, 255, 0.1));
+        }
+
+        .marquee-content {
+            display: flex;
+            animation: marquee 30s linear infinite;
+            gap: 3rem;
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease-out;
+        }
+
+        /* Navigation active state */
+        nav a.active {
+            @apply text-cyan-neo font-semibold;
+            border-bottom: 2px solid #00E8FF;
+        }
+
+        /* Button styles */
+        .btn-primary {
+            @apply bg-cyan-neo text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105;
+        }
+
+        .btn-secondary {
+            @apply border-2 border-cyan-neo text-cyan-neo font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-cyan-neo hover:text-black;
+        }
+
+        .btn-sm {
+            @apply px-4 py-2 text-sm rounded-lg transition-all duration-300;
+        }
+
+        /* Input styling */
+        .input-neo {
+            @apply w-full px-4 py-3 rounded-lg border-2 border-gray-800 bg-gray-neo text-white placeholder-gray-500 focus:outline-none focus:border-cyan-neo focus:shadow-lg transition-all duration-300;
+        }
+
+        .light-mode .input-neo {
+            @apply border-gray-200 bg-white text-gray-900 placeholder-gray-400 focus:border-cyan-neo;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            @apply sticky top-0 z-50 backdrop-blur-md border-b border-gray-800 transition-all duration-300;
+            background: rgba(10, 10, 10, 0.95);
+        }
+
+        .light-mode .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            @apply border-gray-200;
+        }
+
+        /* Hero overlay */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 232, 255, 0.1));
+        }
+
+        /* Grid animations */
+        .grid-item {
+            animation: slideUp 0.6s ease-out backwards;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .grid-item:nth-child(1) { animation-delay: 0s; }
+        .grid-item:nth-child(2) { animation-delay: 0.1s; }
+        .grid-item:nth-child(3) { animation-delay: 0.2s; }
+        .grid-item:nth-child(4) { animation-delay: 0.3s; }
+        .grid-item:nth-child(5) { animation-delay: 0.4s; }
+        .grid-item:nth-child(6) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="dark-mode">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#/" class="flex items-center gap-2 group cursor-pointer">
+                    <svg width="32" height="32" viewBox="0 0 100 100" class="transform group-hover:rotate-12 transition-transform duration-300">
+                        <defs>
+                            <linearGradient id="neoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00E8FF;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00c9d7;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- N parallelogram shape -->
+                        <polygon points="20,80 35,20 50,20 35,80" fill="url(#neoGrad)" stroke="#00E8FF" stroke-width="2"/>
+                        <polygon points="50,20 65,80 80,80 65,20" fill="url(#neoGrad)" stroke="#00E8FF" stroke-width="2"/>
+                    </svg>
+                    <div>
+                        <p class="text-xl font-bold text-cyan-neo">NEO</p>
+                        <p class="text-xs font-light text-gray-400">fertilizantes</p>
+                    </div>
+                </a>
+
+                <!-- Nav links (hidden on mobile) -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#/" class="nav-link hover:text-cyan-neo transition-colors duration-300">Início</a>
+                    <a href="#/sobre" class="nav-link hover:text-cyan-neo transition-colors duration-300">Sobre</a>
+                    <a href="#/catalogo" class="nav-link hover:text-cyan-neo transition-colors duration-300">Catálogo</a>
+                    <a href="#/contato" class="nav-link hover:text-cyan-neo transition-colors duration-300">Contato</a>
+                </div>
+
+                <!-- Theme toggle + Mobile menu -->
+                <div class="flex items-center gap-4">
+                    <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300" title="Alternar tema">
+                        <svg id="sunIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
+                            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg id="moonIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-800">
+                <a href="#/" class="block py-2 nav-link hover:text-cyan-neo transition-colors duration-300">Início</a>
+                <a href="#/sobre" class="block py-2 nav-link hover:text-cyan-neo transition-colors duration-300">Sobre</a>
+                <a href="#/catalogo" class="block py-2 nav-link hover:text-cyan-neo transition-colors duration-300">Catálogo</a>
+                <a href="#/contato" class="block py-2 nav-link hover:text-cyan-neo transition-colors duration-300">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content container -->
+    <main id="app" class="min-h-screen">
+        <!-- Loading state -->
+        <div id="loading" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-40">
+            <div class="bg-gray-neo border border-gray-800 rounded-lg p-8 flex flex-col items-center gap-4">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-neo"></div>
+                <p class="text-gray-400">Carregando...</p>
+            </div>
+        </div>
+
+        <!-- Pages will be rendered here -->
+    </main>
+
+    <!-- Floating WhatsApp button -->
+    <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.742 5.413 2.151 7.788l-2.335 6.993 7.228-2.313c2.269 1.231 4.817 1.882 7.383 1.882 9.738 0 17.653-7.752 17.653-17.28 0-4.61-1.748-8.954-4.9-12.229-3.151-3.276-7.523-5.08-12.184-5.08z"/>
+        </svg>
+    </a>
+
+    <!-- Scroll to top button -->
+    <button id="scrollTopBtn" class="fixed bottom-24 right-6 z-40 bg-cyan-neo text-black p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none hover:scale-110">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-gray-neo border-t border-gray-800 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <svg width="28" height="28" viewBox="0 0 100 100" class="flex-shrink-0">
+                            <defs>
+                                <linearGradient id="neoGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00E8FF;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00c9d7;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="20,80 35,20 50,20 35,80" fill="url(#neoGradFoot)"/>
+                            <polygon points="50,20 65,80 80,80 65,20" fill="url(#neoGradFoot)"/>
+                        </svg>
+                        <p class="font-bold text-cyan-neo">NEO</p>
+                    </div>
+                    <p class="text-gray-400 text-sm">Adubos especiais para o seu sucesso</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-cyan-neo">Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#/" class="hover:text-cyan-neo transition-colors">Início</a></li>
+                        <li><a href="#/sobre" class="hover:text-cyan-neo transition-colors">Sobre Nós</a></li>
+                        <li><a href="#/catalogo" class="hover:text-cyan-neo transition-colors">Catálogo</a></li>
+                        <li><a href="#/contato" class="hover:text-cyan-neo transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-cyan-neo">Contato</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Email: info@neofertilizantes.com.br</li>
+                        <li>Telefone: +55 (44) 99999-9999</li>
+                        <li>Endereço: Maringá, PR - Brasil</li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-cyan-neo">Redes Sociais</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="text-gray-400 hover:text-cyan-neo transition-colors">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-neo transition-colors">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8.29 20v-7.21H5.33V9.25h2.96V7.69c0-2.92 1.78-4.51 4.39-4.51 1.25 0 2.33.09 2.63.13v3.05h-1.8c-1.42 0-1.7.67-1.7 1.66V9.25h3.42l-.46 3.54h-2.96V20"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-neo transition-colors">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 002.856-3.64 10.02 10.02 0 01-2.856.973 5.025 5.025 0 00-8.76-3.154 5.01 5.01 0 00-1.532 1.3A14.201 14.201 0 012.172 3.05a5.023 5.023 0 001.56 6.348A4.964 4.964 0 01.96 9.09v.063a5.026 5.026 0 004.03 4.922 5.02 5.02 0 01-2.27.085 5.03 5.03 0 004.695 3.486 10.09 10.09 0 01-6.25 2.159c-.406 0-.81-.024-1.21-.067a14.189 14.189 0 007.675 2.25c9.21 0 14.225-7.17 14.225-13.385 0-.204-.005-.408-.015-.612a10.015 10.015 0 002.456-2.55z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2026 Neo Fertilizantes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Products script -->
+    <script src="js/products.js"></script>
+
+    <!-- Main application script -->
+    <script>
+        // ============================================================================
+        // STATE MANAGEMENT
+        // ============================================================================
+
+        let isDarkMode = true;
+        let currentPage = 'home';
+        let currentProduct = null;
+        let filterData = {
+            search: '',
+            brand: '',
+            category: '',
+            subcategory: ''
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', initializeApp);
+
+        function initializeApp() {
+            setupThemeToggle();
+            setupRouting();
+            setupScrollAnimations();
+            setupMobileMenu();
+            setupScrollToTopButton();
+
+            // Load initial page
+            const hash = window.location.hash.slice(1) || '/';
+            navigateTo(hash);
+        }
+
+        // ============================================================================
+        // THEME MANAGEMENT
+        // ============================================================================
+
+        function setupThemeToggle() {
+            const themeToggle = document.getElementById('themeToggle');
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+
+            themeToggle.addEventListener('click', () => {
+                isDarkMode = !isDarkMode;
+                updateTheme();
+            });
+
+            // Set initial theme to dark
+            updateTheme();
+        }
+
+        function updateTheme() {
+            const html = document.documentElement;
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+
+            if (isDarkMode) {
+                html.classList.remove('light-mode');
+                html.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('dark-mode');
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+            } else {
+                html.classList.remove('dark-mode');
+                html.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+                document.body.classList.add('light-mode');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+
+        // ============================================================================
+        // ROUTING
+        // ============================================================================
+
+        function setupRouting() {
+            window.addEventListener('hashchange', () => {
+                const hash = window.location.hash.slice(1) || '/';
+                navigateTo(hash);
+            });
+        }
+
+        function navigateTo(path) {
+            const [page, ...params] = path.split('/').filter(Boolean);
+            const app = document.getElementById('app');
+
+            window.scrollTo(0, 0);
+            updateActiveNavLink(path);
+
+            if (!page || page === '' || page === 'home') {
+                renderHome(app);
+                currentPage = 'home';
+            } else if (page === 'sobre') {
+                renderAbout(app);
+                currentPage = 'about';
+            } else if (page === 'catalogo') {
+                resetFilters();
+                renderCatalog(app);
+                currentPage = 'catalog';
+            } else if (page === 'produto' && params[0]) {
+                renderProductDetail(app, params[0]);
+                currentPage = 'product';
+            } else if (page === 'contato') {
+                renderContact(app);
+                currentPage = 'contact';
+            } else {
+                renderHome(app);
+                currentPage = 'home';
+            }
+
+            // Trigger animations
+            setTimeout(setupScrollAnimations, 100);
+        }
+
+        function updateActiveNavLink(path) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href').slice(1) || '/';
+                if (href === path || (!path && href === '/')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // ============================================================================
+        // SCROLL ANIMATIONS
+        // ============================================================================
+
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // ============================================================================
+        // SCROLL TO TOP
+        // ============================================================================
+
+        function setupScrollToTopButton() {
+            const btn = document.getElementById('scrollTopBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    btn.classList.remove('opacity-0', 'pointer-events-none');
+                } else {
+                    btn.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            btn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // ============================================================================
+        // MOBILE MENU
+        // ============================================================================
+
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // ============================================================================
+        // PAGE RENDERERS
+        // ============================================================================
+
+        function renderHome(container) {
+            container.innerHTML = `
+                <!-- Hero Section -->
+                <section class="relative h-screen md:h-[600px] flex items-center justify-center overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1920&q=80" alt="Agricultura" class="absolute inset-0 w-full h-full object-cover z-0">
+                    <div class="hero-overlay absolute inset-0 z-10"></div>
+
+                    <div class="relative z-20 text-center px-4 animate-fade-in">
+                        <svg width="120" height="120" viewBox="0 0 100 100" class="mx-auto mb-6 animate-bounce">
+                            <defs>
+                                <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00E8FF;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00c9d7;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="20,80 35,20 50,20 35,80" fill="url(#heroGrad)" stroke="#00E8FF" stroke-width="2"/>
+                            <polygon points="50,20 65,80 80,80 65,20" fill="url(#heroGrad)" stroke="#00E8FF" stroke-width="2"/>
+                        </svg>
+                        <h1 class="text-5xl md:text-7xl font-bold mb-4">NEO</h1>
+                        <p class="text-2xl md:text-3xl text-cyan-neo font-light mb-8">fertilizantes especiais</p>
+                        <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">Promovendo o crescimento da produtividade com adubos que potencializem a qualidade do solo</p>
+                        <div class="flex flex-col md:flex-row justify-center gap-4">
+                            <a href="#/catalogo" class="btn-primary">Explorar Catálogo</a>
+                            <a href="#/sobre" class="btn-secondary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sobre Nós Summary -->
+                <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h2 class="text-4xl font-bold mb-4 reveal">Sobre Nós</h2>
+                            <div class="w-24 h-1 bg-gradient-to-r from-cyan-neo to-transparent mx-auto mb-8"></div>
+                        </div>
+                        <p class="text-lg text-gray-400 text-center leading-relaxed reveal">
+                            Na Neo Fertilizantes, acreditamos que o crescimento sustentável é a chave para o futuro da agricultura. Nossa missão é promover a produtividade através de soluções inovadoras que respeitam o meio ambiente, sem comprometer a qualidade do solo.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Products Carousel -->
+                <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-neo">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h2 class="text-4xl font-bold mb-4 reveal">Produtos em Destaque</h2>
+                            <div class="w-24 h-1 bg-gradient-to-r from-cyan-neo to-transparent mx-auto"></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${PRODUCTS.slice(0, 6).map((product, idx) => `
+                                <div class="grid-item bg-dark-neo border border-gray-800 rounded-xl p-6 card-hover cursor-pointer" onclick="navigateToProduct('${product.slug}')">
+                                    <div class="w-full h-48 bg-gradient-to-br from-cyan-neo to-gray-neo rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                                        <div class="text-gray-600 text-center">
+                                            <p class="text-sm">Imagem do Produto</p>
+                                            <p class="text-xs text-gray-700">${product.category}</p>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
+                                    <p class="text-sm text-gray-400 mb-3">${product.variant}</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs font-semibold text-cyan-neo bg-gray-800 px-3 py-1 rounded-full">${product.brand}</span>
+                                        <span class="text-xs text-gray-500">${product.category}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="text-center mt-12">
+                            <a href="#/catalogo" class="btn-primary">Ver Catálogo Completo</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Brand Partners Marquee -->
+                <section class="py-12 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto mb-8">
+                        <h3 class="text-2xl font-bold text-center mb-8 reveal">Parceiros de Confiança</h3>
+                    </div>
+                    <div class="marquee-wrapper">
+                        <div class="marquee-content">
+                            ${['Neo', 'ICL', 'Sipcam', 'Gowan', 'Ouro Fino', 'Rainbow', 'Tide', 'FMC', 'Husqvarna', 'AJINOMOTO', 'Geox', 'Phox Fertilizantes', 'caltim', 'EQUIPAMENTO', 'PANO-LONA-BAG', 'SACARIA'].map(brand => `
+                                <div class="marquee-item text-gray-400">${brand}</div>
+                            `).join('')}
+                            ${['Neo', 'ICL', 'Sipcam', 'Gowan', 'Ouro Fino', 'Rainbow', 'Tide', 'FMC', 'Husqvarna', 'AJINOMOTO', 'Geox', 'Phox Fertilizantes', 'caltim', 'EQUIPAMENTO', 'PANO-LONA-BAG', 'SACARIA'].map(brand => `
+                                <div class="marquee-item text-gray-400">${brand}</div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-neo">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="text-center reveal">
+                                <div class="text-5xl font-bold text-cyan-neo mb-2">165+</div>
+                                <p class="text-gray-400 text-lg">Produtos</p>
+                            </div>
+                            <div class="text-center reveal">
+                                <div class="text-5xl font-bold text-cyan-neo mb-2">16</div>
+                                <p class="text-gray-400 text-lg">Marcas Parceiras</p>
+                            </div>
+                            <div class="text-center reveal">
+                                <div class="text-5xl font-bold text-cyan-neo mb-2">4</div>
+                                <p class="text-gray-400 text-lg">Categorias</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderAbout(container) {
+            container.innerHTML = `
+                <!-- Hero -->
+                <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h1 class="text-5xl md:text-6xl font-bold mb-6 reveal">Sobre a Neo</h1>
+                        <p class="text-xl text-gray-400 reveal">Conheça a história, missão e valores que nos guiam</p>
+                    </div>
+                </section>
+
+                <!-- Story -->
+                <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-4xl font-bold mb-8 reveal">Nossa História</h2>
+                        <p class="text-lg text-gray-400 leading-relaxed mb-6 reveal">
+                            A Neo Fertilizantes nasceu da paixão por inovação e sustentabilidade na agricultura. Com mais de uma década de experiência, consolidamos nossa posição como referência no fornecimento de soluções especializadas para fertilização agrícola.
+                        </p>
+                        <p class="text-lg text-gray-400 leading-relaxed reveal">
+                            Cada produto é desenvolvido com rigor científico e compromisso com a qualidade, garantindo que nossos clientes tenham acesso às melhores tecnologias disponíveis no mercado.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Mission, Vision, Values -->
+                <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-neo">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Mission -->
+                            <div class="reveal bg-dark-neo border border-gray-800 rounded-xl p-8">
+                                <div class="text-cyan-neo text-3xl font-bold mb-4">✦</div>
+                                <h3 class="text-2xl font-bold mb-4">Missão</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Promover o crescimento da produtividade com adubos que potencializem a qualidade do solo sem agredir o meio ambiente.
+                                </p>
+                            </div>
+
+                            <!-- Vision -->
+                            <div class="reveal bg-dark-neo border border-gray-800 rounded-xl p-8">
+                                <div class="text-cyan-neo text-3xl font-bold mb-4">◆</div>
+                                <h3 class="text-2xl font-bold mb-4">Visão</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Ser referência no mercado de adubos, reconhecida pela inovação e resultados excepcionais na fertilidade do solo.
+                                </p>
+                            </div>
+
+                            <!-- Values -->
+                            <div class="reveal bg-dark-neo border border-gray-800 rounded-xl p-8">
+                                <div class="text-cyan-neo text-3xl font-bold mb-4">■</div>
+                                <h3 class="text-2xl font-bold mb-4">Valores</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    <strong>Parceria:</strong> Trabalhamos juntos com nossos clientes.<br/>
+                                    <strong>Inovação:</strong> Buscamos constantemente melhorar.<br/>
+                                    <strong>Equilíbrio:</strong> Respeitamos o meio ambiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Brand Personality -->
+                <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-4xl font-bold mb-8 reveal">Nossa Personalidade</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="reveal border-l-4 border-cyan-neo pl-6">
+                                <h3 class="text-xl font-semibold mb-2">Inovação</h3>
+                                <p class="text-gray-400">Soluções avançadas para desafios modernos da agricultura.</p>
+                            </div>
+                            <div class="reveal border-l-4 border-cyan-neo pl-6">
+                                <h3 class="text-xl font-semibold mb-2">Parceria</h3>
+                                <p class="text-gray-400">Relacionamento próximo e transparente com clientes.</p>
+                            </div>
+                            <div class="reveal border-l-4 border-cyan-neo pl-6">
+                                <h3 class="text-xl font-semibold mb-2">Confiabilidade</h3>
+                                <p class="text-gray-400">Resultados comprovados e qualidade garantida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderCatalog(container) {
+            const filteredProducts = getFilteredProducts();
+
+            container.innerHTML = `
+                <!-- Header -->
+                <section class="pt-24 pb-8 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto">
+                        <h1 class="text-5xl font-bold mb-4 reveal">Catálogo de Produtos</h1>
+                        <p class="text-gray-400 text-lg reveal">Explore nossa completa linha de adubos especiais</p>
+                    </div>
+                </section>
+
+                <!-- Search and Filters -->
+                <section class="py-8 px-4 sm:px-6 lg:px-8 bg-gray-neo sticky top-20 z-40 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto">
+                        <!-- Search Bar -->
+                        <input type="text" id="searchInput" placeholder="Buscar por nome, marca, código..." class="input-neo mb-6 w-full">
+
+                        <!-- Filter Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div>
+                                <label class="text-sm font-semibold text-gray-400 mb-2 block">Marca</label>
+                                <select id="brandFilter" class="input-neo text-sm">
+                                    <option value="">Todas as marcas</option>
+                                    ${[...new Set(PRODUCTS.map(p => p.brand))].sort().map(brand => `
+                                        <option value="${brand}">${brand}</option>
+                                    `).join('')}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-sm font-semibold text-gray-400 mb-2 block">Categoria</label>
+                                <select id="categoryFilter" class="input-neo text-sm">
+                                    <option value="">Todas as categorias</option>
+                                    ${[...new Set(PRODUCTS.map(p => p.category))].sort().map(cat => `
+                                        <option value="${cat}">${cat}</option>
+                                    `).join('')}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-sm font-semibold text-gray-400 mb-2 block">Subcategoria</label>
+                                <select id="subcategoryFilter" class="input-neo text-sm">
+                                    <option value="">Todas as subcategorias</option>
+                                    ${[...new Set(PRODUCTS.map(p => p.subcategory))].sort().map(subcat => `
+                                        <option value="${subcat}">${subcat}</option>
+                                    `).join('')}
+                                </select>
+                            </div>
+                            <div class="flex items-end gap-2">
+                                <button id="resetFilters" class="btn-secondary flex-1 text-sm">Limpar Filtros</button>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-sm text-gray-400">
+                            Mostrando <span id="productCount">${filteredProducts.length}</span> de ${PRODUCTS.length} produtos
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Products Grid -->
+                <section class="py-16 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto">
+                        <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${filteredProducts.length > 0 ? filteredProducts.map((product, idx) => `
+                                <div class="grid-item bg-gray-neo border border-gray-800 rounded-xl overflow-hidden card-hover cursor-pointer" style="animation-delay:${Math.min(idx*0.04,0.5)}s" onclick="navigateToProduct('${product.slug}')">
+                                    <div class="w-full h-48 bg-gradient-to-br from-cyan-neo/10 to-gray-neo flex items-center justify-center relative overflow-hidden">
+                                        ${product.image
+                                            ? `<img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain p-4" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'text-gray-500 text-center\\'><p class=\\'text-3xl\\'>📦</p></div>'">`
+                                            : `<div class="text-gray-500 text-center"><p class="text-3xl">📦</p><p class="text-xs mt-2 text-gray-600">${product.category}</p></div>`
+                                        }
+                                    </div>
+                                    <div class="p-5">
+                                        <div class="flex flex-wrap gap-2 mb-3">
+                                            <span class="text-xs font-semibold text-cyan-neo bg-cyan-neo/10 px-3 py-1 rounded-full">${product.brand}</span>
+                                            <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded-full">${product.subcategory}</span>
+                                        </div>
+                                        <h3 class="text-base font-semibold mb-1 line-clamp-2">${product.name}</h3>
+                                        <p class="text-sm text-gray-400 mb-2">${[product.variant, product.content, product.pkgType].filter(Boolean).join(' · ')}</p>
+                                        <p class="text-xs text-gray-600">#${product.code}</p>
+                                    </div>
+                                </div>
+                            `).join('') : `
+                                <div class="col-span-full text-center py-12">
+                                    <p class="text-4xl mb-4">🔍</p>
+                                    <p class="text-gray-400 text-lg">Nenhum produto encontrado com os filtros selecionados.</p>
+                                </div>
+                            `}
+                        </div>
+                    </div>
+                </section>
+            `;
+
+            // Setup filter event listeners
+            setupCatalogFilters();
+        }
+
+        function renderProductDetail(container, slug) {
+            const product = PRODUCTS.find(p => p.slug === slug);
+
+            if (!product) {
+                container.innerHTML = `
+                    <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h1 class="text-4xl font-bold mb-4">Produto não encontrado</h1>
+                            <p class="text-gray-400 mb-6">O produto que você procura não existe no catálogo.</p>
+                            <a href="#/catalogo" class="btn-primary">Voltar ao Catálogo</a>
+                        </div>
+                    </section>
+                `;
+                return;
+            }
+
+            const relatedProducts = PRODUCTS.filter(p => p.brand === product.brand && p.slug !== slug).slice(0, 4);
+
+            container.innerHTML = `
+                <!-- Breadcrumb -->
+                <section class="pt-24 pb-8 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto">
+                        <a href="#/catalogo" class="text-cyan-neo hover:text-white transition-colors mb-6 inline-block">← Voltar ao Catálogo</a>
+                    </div>
+                </section>
+
+                <!-- Product Detail -->
+                <section class="py-16 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Image -->
+                        <div class="reveal">
+                            <div class="w-full h-96 bg-gradient-to-br from-cyan-neo/10 to-gray-neo rounded-xl flex items-center justify-center border border-gray-800 overflow-hidden">
+                                ${product.image
+                                    ? `<img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain p-6">`
+                                    : `<div class="text-center text-gray-500"><p class="text-5xl">📦</p><p class="text-sm mt-4">${product.category}</p></div>`
+                                }
+                            </div>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="reveal">
+                            <h1 class="text-4xl font-bold mb-4">${product.name}</h1>
+
+                            <div class="flex flex-wrap gap-3 mb-8">
+                                <span class="text-xl font-semibold text-cyan-neo bg-gray-800 px-4 py-2 rounded-lg">${product.brand}</span>
+                                <span class="text-lg text-gray-400 bg-gray-800 px-4 py-2 rounded-lg">${product.category}</span>
+                            </div>
+
+                            <div class="space-y-4 mb-8 pb-8 border-b border-gray-800">
+                                <div>
+                                    <p class="text-gray-500 text-sm mb-1">Variante</p>
+                                    <p class="text-xl font-semibold">${product.variant}</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm mb-1">Embalagem</p>
+                                    <p class="text-xl font-semibold">${product.content} ${product.pkgType}</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm mb-1">Código do Produto</p>
+                                    <p class="text-xl font-semibold">${product.code}</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <h3 class="text-lg font-semibold mb-3">Observações Técnicas</h3>
+                                <p class="text-gray-400 leading-relaxed">${product.notes}</p>
+                            </div>
+
+                            ${product.bulaLink ? `
+                                <a href="${product.bulaLink}" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center">
+                                    📄 Baixar Bula/Ficha Técnica
+                                </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Related Products -->
+                ${relatedProducts.length > 0 ? `
+                    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-neo">
+                        <div class="max-w-7xl mx-auto">
+                            <h2 class="text-3xl font-bold mb-8 reveal">Produtos Relacionados</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                ${relatedProducts.map((p, idx) => `
+                                    <div class="grid-item bg-dark-neo border border-gray-800 rounded-xl p-6 card-hover cursor-pointer" onclick="navigateToProduct('${p.slug}')">
+                                        <div class="w-full h-32 bg-gradient-to-br from-cyan-neo/20 to-gray-neo rounded-lg mb-4 flex items-center justify-center">
+                                            <p class="text-gray-600">📦</p>
+                                        </div>
+                                        <h3 class="text-lg font-semibold mb-2">${p.name}</h3>
+                                        <p class="text-sm text-gray-400 mb-3">${p.variant}</p>
+                                        <span class="text-xs font-semibold text-cyan-neo bg-gray-800 px-3 py-1 rounded-full">${p.brand}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </section>
+                ` : ''}
+            `;
+        }
+
+        function renderContact(container) {
+            container.innerHTML = `
+                <!-- Header -->
+                <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h1 class="text-5xl font-bold mb-4 reveal">Entre em Contato</h1>
+                        <p class="text-gray-400 text-lg reveal">Estamos sempre disponíveis para ajudar você</p>
+                    </div>
+                </section>
+
+                <!-- Content -->
+                <section class="py-16 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Form -->
+                        <div class="reveal">
+                            <h2 class="text-3xl font-bold mb-6">Envie uma Mensagem</h2>
+                            <form id="contactForm" class="space-y-4">
+                                <div>
+                                    <label class="text-sm font-semibold text-gray-400 mb-2 block">Nome</label>
+                                    <input type="text" name="name" required class="input-neo" placeholder="Seu nome">
+                                </div>
+                                <div>
+                                    <label class="text-sm font-semibold text-gray-400 mb-2 block">Email</label>
+                                    <input type="email" name="email" required class="input-neo" placeholder="seu@email.com">
+                                </div>
+                                <div>
+                                    <label class="text-sm font-semibold text-gray-400 mb-2 block">Telefone</label>
+                                    <input type="tel" name="phone" class="input-neo" placeholder="(44) 99999-9999">
+                                </div>
+                                <div>
+                                    <label class="text-sm font-semibold text-gray-400 mb-2 block">Mensagem</label>
+                                    <textarea name="message" required rows="6" class="input-neo" placeholder="Sua mensagem..."></textarea>
+                                </div>
+                                <button type="submit" class="btn-primary w-full">Enviar Mensagem</button>
+                            </form>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="reveal space-y-8">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">Informações de Contato</h3>
+                                <div class="space-y-4">
+                                    <div class="flex gap-4">
+                                        <div class="text-cyan-neo text-2xl flex-shrink-0">📍</div>
+                                        <div>
+                                            <p class="font-semibold mb-1">Endereço</p>
+                                            <p class="text-gray-400">Maringá, PR - Brasil</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="text-cyan-neo text-2xl flex-shrink-0">📞</div>
+                                        <div>
+                                            <p class="font-semibold mb-1">Telefone</p>
+                                            <p class="text-gray-400">+55 (44) 99999-9999</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="text-cyan-neo text-2xl flex-shrink-0">✉️</div>
+                                        <div>
+                                            <p class="font-semibold mb-1">Email</p>
+                                            <p class="text-gray-400">info@neofertilizantes.com.br</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="text-cyan-neo text-2xl flex-shrink-0">💬</div>
+                                        <div>
+                                            <p class="font-semibold mb-1">WhatsApp</p>
+                                            <a href="https://wa.me/5500000000000" target="_blank" class="text-cyan-neo hover:text-white transition-colors">Converse conosco</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Google Maps -->
+                            <div class="bg-gray-neo rounded-xl overflow-hidden border border-gray-800 h-64">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117036.04940834898!2d-51.99482185!3d-23.42067935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecd798be5e5733%3A0x2b8e3ddc85e8bb87!2sMaring%C3%A1%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `;
+
+            // Setup contact form
+            setupContactForm();
+        }
+
+        // ============================================================================
+        // FILTER FUNCTIONS
+        // ============================================================================
+
+        function resetFilters() {
+            filterData = {
+                search: '',
+                brand: '',
+                category: '',
+                subcategory: ''
+            };
+        }
+
+        function getFilteredProducts() {
+            return PRODUCTS.filter(product => {
+                const searchTerm = filterData.search.toLowerCase();
+                const matchesSearch = !searchTerm ||
+                    product.name.toLowerCase().includes(searchTerm) ||
+                    product.brand.toLowerCase().includes(searchTerm) ||
+                    product.code.toLowerCase().includes(searchTerm);
+
+                const matchesBrand = !filterData.brand || product.brand === filterData.brand;
+                const matchesCategory = !filterData.category || product.category === filterData.category;
+                const matchesSubcategory = !filterData.subcategory || product.subcategory === filterData.subcategory;
+
+                return matchesSearch && matchesBrand && matchesCategory && matchesSubcategory;
+            });
+        }
+
+        function setupCatalogFilters() {
+            const searchInput = document.getElementById('searchInput');
+            const brandFilter = document.getElementById('brandFilter');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const subcategoryFilter = document.getElementById('subcategoryFilter');
+            const resetBtn = document.getElementById('resetFilters');
+
+            searchInput.addEventListener('input', (e) => {
+                filterData.search = e.target.value;
+                updateCatalog();
+            });
+
+            brandFilter.addEventListener('change', (e) => {
+                filterData.brand = e.target.value;
+                updateCatalog();
+            });
+
+            categoryFilter.addEventListener('change', (e) => {
+                filterData.category = e.target.value;
+                updateCatalog();
+            });
+
+            subcategoryFilter.addEventListener('change', (e) => {
+                filterData.subcategory = e.target.value;
+                updateCatalog();
+            });
+
+            resetBtn.addEventListener('click', () => {
+                resetFilters();
+                searchInput.value = '';
+                brandFilter.value = '';
+                categoryFilter.value = '';
+                subcategoryFilter.value = '';
+                updateCatalog();
+            });
+        }
+
+        function updateCatalog() {
+            const grid = document.getElementById('productsGrid');
+            const countEl = document.getElementById('productCount');
+            if (!grid) return;
+            const filtered = getFilteredProducts();
+            if (countEl) countEl.textContent = filtered.length;
+            grid.innerHTML = filtered.length === 0
+                ? '<div class="col-span-full text-center py-16 text-gray-500"><p class="text-4xl mb-4">🔍</p><p class="text-lg">Nenhum produto encontrado</p></div>'
+                : filtered.map((p, idx) => `
+                    <div class="grid-item bg-gray-neo border border-gray-800 rounded-xl overflow-hidden card-hover cursor-pointer" style="animation-delay:${Math.min(idx*0.04,0.5)}s" onclick="navigateToProduct('${p.slug}')">
+                        <div class="w-full h-48 bg-gradient-to-br from-cyan-neo/10 to-gray-neo flex items-center justify-center overflow-hidden">
+                            ${p.image
+                                ? `<img src="${p.image}" alt="${p.name}" class="w-full h-full object-contain p-4" loading="lazy">`
+                                : `<div class="text-gray-500 text-center"><p class="text-3xl">📦</p><p class="text-xs mt-2 text-gray-600">${p.category}</p></div>`
+                            }
+                        </div>
+                        <div class="p-5">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="text-xs font-semibold text-cyan-neo bg-cyan-neo/10 px-3 py-1 rounded-full">${p.brand}</span>
+                                <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded-full">${p.subcategory || ''}</span>
+                            </div>
+                            <h3 class="text-base font-semibold mb-1 line-clamp-2">${p.name}</h3>
+                            <p class="text-sm text-gray-400 mb-2">${[p.variant, p.content, p.pkgType].filter(Boolean).join(' · ')}</p>
+                            <p class="text-xs text-gray-600">#${p.code}</p>
+                        </div>
+                    </div>
+                `).join('');
+        }
+
+        // ============================================================================
+        // CONTACT FORM
+        // ============================================================================
+
+        function setupContactForm() {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Show success message
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Mensagem Enviada!';
+                btn.disabled = true;
+
+                // Reset form
+                setTimeout(() => {
+                    form.reset();
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }, 3000);
+            });
+        }
+
+        // ============================================================================
+        // NAVIGATION HELPERS
+        // ============================================================================
+
+        function navigateToProduct(slug) {
+            window.location.hash = `#/produto/${slug}`;
+        }
+    </script>
+</body>
+</html>
